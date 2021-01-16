@@ -1,3 +1,16 @@
+.alignCenter{
+	display:table;
+	margin:auto;
+}
+
+.marginTop10{
+	margin-top:10px;
+}
+
+.marginTop20{
+	margin-top:20px;
+}
+
 body{
 	background-color:#f3f3f3;
 	margin:0px;
@@ -50,6 +63,15 @@ body article h1{
 	letter-spacing: 0em;
 	text-align: left;
 }
+body article h2{
+	font-family: D-DIN;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 23px;
+	letter-spacing: 0em;
+	text-align: left;
+}
 body article input[type=text]{
 	font-family: D-DIN;
 	font-size: 16px;
@@ -89,18 +111,6 @@ body article img.inputIcon{
 	margin-left:-40px;
 	margin-top:10px;
 }
-body article .alignCenter{
-	display:table;
-	margin:auto;
-}
-
-body article .marginTop10{
-	margin-top:10px;
-}
-
-body article .marginTop20{
-	margin-top:20px;
-}
 
 body article div.tag{
 	display:inline-block;
@@ -125,4 +135,53 @@ body article div.tagSelected{
 	background: linear-gradient(90deg, #594D9D -27.8%, #A922AC 140.79%);
 	color: #FFFFFF;
 	font-weight: bold;
+}
+
+body article.articlePreview{
+	border-radius:14px;
+	background-color:#ffffff;
+	margin:25px;
+	padding:0px;
+	display:table;
+}
+
+body article .articlePreviewRow{
+	display:table-row;
+}
+
+body article img.articlePreviewPhoto{
+	width:100px;
+	border-radius:14px 0px 0px 14px;
+	display:table-cell;
+	vertical-align:top;
+}
+
+body article .articlePreviewParagraph{
+	display:table-cell;
+	vertical-align:top;
+	padding:10px;
+}
+
+body article a{
+	font-family: D-DIN;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 19px;
+	letter-spacing: 0em;
+	text-align: left;
+	text-decoration:none;
+	color:#594D9D;
+}
+
+body article a:visited{
+	font-family: D-DIN;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 19px;
+	letter-spacing: 0em;
+	text-align: left;
+	text-decoration:none;
+	color:#594D9D;
 }
