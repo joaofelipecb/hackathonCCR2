@@ -2,7 +2,7 @@
 ## Introdução
 Ei Vizinho é uma plataforma de oferta de produtos e serviços baseados no comércio local,
 tendo em vista incentivar novos empreendedores mais próximos dos consumidores,
-com base em dados de consumo e geolocalização e gerar inclusão com a profissionalização
+com base em dados de consumo e geolocalização, gerando inclusão e profissionalização
 para atender a demanda existente.
 
 ## Desenvolvimento Orientado ao Comportamento (BDD)
