@@ -1,0 +1,16 @@
+body{
+	background-color:#f3f3f3;
+	margin:0px;
+}
+body header{
+	background-color:#ffffff;
+	min-height:78px;
+}
+body header img.logo{
+	margin-top:25px;
+	margin-left:25px;
+}
+body header img.menu{
+	margin-top:25px;
+	margin-left:150px;
+}
