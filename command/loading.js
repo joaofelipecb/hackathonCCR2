@@ -22,3 +22,7 @@ function command_Loading_show(element){
 function command_Loading_data(element, data){
 	element.innerHTML = data;
 }
+
+function command_Loading_refresh(element){
+	element.src = element.src;
+}

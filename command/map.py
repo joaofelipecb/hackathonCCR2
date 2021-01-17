@@ -17,14 +17,18 @@ def process():
     subprocess.check_call(command, shell=True)
     return ''
     
-def render():
+def render(business=False):
     homeDir = data.config.get_config('homeDir')
     database = data.config.get_config('database')
     logradouro = gpd.read_file(homeDir+"\\data\\logradouro.shp")
     demanda = gpd.read_file(homeDir+"\\data\\demanda.shp")
+    if business == False:
+        recorte = demanda
+    else:
+        recorte = demanda[demanda['demanda'] == business]
     base = logradouro.plot(color='black', edgecolor='black', linewidth=0.1)
     base.set_aspect(1)
-    pontos = demanda.plot(ax=base, color='red', edgecolor='black', markersize=0.5, linewidth=0)
+    pontos = recorte.plot(ax=base, color='red', edgecolor='black', markersize=0.5, linewidth=0)
     pontos.set_aspect(1)
     base.set_axis_off()
     chart = base.get_figure()

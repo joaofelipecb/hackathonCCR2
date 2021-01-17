@@ -21,6 +21,6 @@ def application(env, start_response):
         route = ''
     else:
         route = http_data['route']
-    result = control.routes.get_response(route)
+    result = control.routes.get_response(route,http_data)
     return [result.encode('ascii')]
     
