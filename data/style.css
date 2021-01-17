@@ -228,3 +228,9 @@ body article section.dropDownSection h2{
 	padding-top:10px;
 	padding-bottom:10px;
 }
+
+body div.mapFrame{
+	width:100%;
+	height:235px;
+	overflow:hidden;
+}

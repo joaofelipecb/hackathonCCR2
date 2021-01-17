@@ -1,6 +1,11 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="control/ajax.js"></script>
+<script src="control/map.js"></script>
+<script>
+control_ajax_request('wsgi.py?route=renderMap',console.log);
+</script>
 <link rel="stylesheet" href="data/style.css">
 <title>Ei Vizinho</title>
 </head>
@@ -24,7 +29,9 @@
 	<div class="tag">Mercearia</div>
 	<div class="tag">Eletricista</div>
 </article>
-<img src="data/mapExample.png">
+<div class="mapFrame">
+<img src="data/mapa.jpg">
+</div>
 <article class="marginHorizontal25">
 <input type="button" class="marginTop10" value="Buscar cursos profissionalizantes">
 </article>
