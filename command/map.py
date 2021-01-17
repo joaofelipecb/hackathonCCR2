@@ -16,4 +16,4 @@ def render():
     base.set_axis_off()
     chart = base.get_figure()
     filepath = homeDir + '/data/'+ 'mapa.jpg'
-    chart.savefig(filepath, dpi=300)
+    chart.savefig(filepath, dpi=600)
