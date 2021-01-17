@@ -31,12 +31,12 @@ control_ajax_request('wsgi.py?route=renderMap',console.log);
 	<div class="tag">Mercearia</div>
 	<div class="tag">Eletricista</div>
 </article>
-<div class="mapFrame" id="mapFrame">
-<img src="data/mapa.jpg">
+<div class="mapFrame" >
+<img src="data/mapa.jpg" id="mapFrame">
 </div>
 <script>
 var mapFrame = document.getElementById('mapFrame');
-control_Map_initialize(mapFrame,-1000,-1000,1);
+control_Map_initialize(mapFrame,1920,1440,-1583,-1597,3);
 </script>
 <article class="marginHorizontal25">
 <input type="button" class="marginTop10" value="Buscar cursos profissionalizantes">
