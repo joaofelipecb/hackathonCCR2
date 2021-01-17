@@ -4,7 +4,9 @@
 <script src="command/loading.js"></script>
 <script src="command/map.js"></script>
 <script src="command/dataDriver.js"></script>
+<script src="command/business.js"></script>
 <script src="control/ajax.js"></script>
+<script src="control/business.js"></script>
 <script src="control/loading.js"></script>
 <script src="control/map.js"></script>
 <script src="control/dataDriver.js"></script>
@@ -49,7 +51,7 @@ var callToAction = document.getElementById('callToAction');
 var loading3 = control_Loading_initialize('wsgi.py?route=renderMap', [mapFrame, businessSuggestion, callToAction], mapImage, loadingAnimation);
 
 var businessSuggestionData = document.getElementById('businessSuggestionData');
-var businessSuggestionDataDriver = control_DataDriver_initialize(businessSuggestionData, '<div class="tag">$0</tag>');
+var businessSuggestionDataDriver = control_DataDriver_initialize(businessSuggestionData, '<div class="tag" onclick="control_Business_click(event)">$0</tag>');
 var loading2 = control_Loading_initialize('wsgi.py?route=suggestBusiness', null, businessSuggestionDataDriver, loading3);
 
 var loading1 = control_Loading_initialize('wsgi.py?route=processMap', null, null, loading2);
