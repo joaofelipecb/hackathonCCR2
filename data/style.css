@@ -261,3 +261,57 @@ body .loadingAnimation{
 	margin-top:260px;
 	position:absolute;
 }
+
+body article.contractPreview{
+	border-radius:14px;
+	background-color:#ffffff;
+	margin:25px;
+	margin-bottom:15px;
+	margin-top:15px;
+	padding:20px;
+}
+
+body article div.smallTagList{
+	text-align:right;
+	position:absolute;
+	width:270px;
+}
+
+body article div.smallTag{
+	background: rgba(63, 63, 63, 0.14);
+	border-radius: 29px;
+	display:table;
+	margin-left:auto;
+	font-family: D-DIN;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: 300;
+	line-height: 9px;
+	letter-spacing: 0em;
+	padding:2px;
+	padding-left:8px;
+	padding-right:8px;
+	margin-bottom:2px;
+}
+
+body article img.contractPreviewPhoto{
+	
+	display:table;
+	margin:auto;
+}
+
+body article h2.contractPreviewTitle{
+	text-align:center;
+	margin-block-end:0px;
+}
+
+body article div.contractPreviewSubtitle{
+	text-align:center;
+	font-family: D-DIN;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 12px;
+	letter-spacing: 0em;
+	color: #A922AC;
+}
