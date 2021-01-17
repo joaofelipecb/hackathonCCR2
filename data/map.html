@@ -1,13 +1,13 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="command/loading.js"></script>
 <script src="command/map.js"></script>
 <script src="control/ajax.js"></script>
+<script src="control/loading.js"></script>
 <script src="control/map.js"></script>
+<script src="struct/loading.js"></script>
 <script src="struct/map.js"></script>
-<script>
-control_ajax_request('wsgi.py?route=renderMap',console.log);
-</script>
 <link rel="stylesheet" href="data/style.css">
 <title>Ei Vizinho</title>
 </head>
@@ -17,9 +17,11 @@ control_ajax_request('wsgi.py?route=renderMap',console.log);
 	<img src="data/hamburguerMenu.png" class="menu">
 </header>
 <article class="marginHorizontal25">
+<div style="display:none" id="businessSugestion">
 	<p>Esses foram os top 10 neg&oacute;cios mais consumidos nesta regi&atilde;o.
 	Escolha alguma op&ccedil;&atilde;o para vizualizar o consumo de cada neg&oacute;cio
 	separadamente.</p>
+	<div id="businessSugestionData">
 	<div class="tag tagSelected">Hamburguers</div>
 	<div class="tag">Encanamento</div>
 	<div class="tag">Dry Wall</div>
@@ -30,16 +32,26 @@ control_ajax_request('wsgi.py?route=renderMap',console.log);
 	<div class="tag">Manicure</div>
 	<div class="tag">Mercearia</div>
 	<div class="tag">Eletricista</div>
+	</div>
+</div>
 </article>
-<div class="mapFrame" >
+<div class="mapFrame" style="display:none;">
 <img src="data/mapa.jpg" id="mapFrame">
 </div>
 <script>
 var mapFrame = document.getElementById('mapFrame');
 control_Map_initialize(mapFrame,1920,1440,-1583,-1556,3);
 </script>
-<article class="marginHorizontal25">
+<article class="marginHorizontal25" style="display:none;">
 <input type="button" class="marginTop10" value="Buscar cursos profissionalizantes">
 </article>
+<img src="data/loading.gif" class="loadingAnimation" id="loadingAnimation">
+<script>
+var loadingAnimation = document.getElementById('loadingAnimation');
+var bussinesSugestion = document.getElementById('businessSugestion');
+var businessSugestionData = document.getElementById('businessSugestionData');
+var loading = control_Loading_initialize(loadingAnimation, businessSugestion, businessSugestionData);
+control_ajax_request('wsgi.py?route=renderMap',control_Loading_finish.bind(null,loading));
+</script>
 </body>
 <html>
