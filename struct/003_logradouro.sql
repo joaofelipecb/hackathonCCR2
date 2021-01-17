@@ -1,0 +1,27 @@
+CREATE TABLE `logradouro` (
+	`OGR_FID` INT(11) NOT NULL AUTO_INCREMENT,
+	`SHAPE` GEOMETRY NOT NULL,
+	`objectid_1` DECIMAL(4,0) NULL DEFAULT NULL,
+	`objectid` DECIMAL(5,0) NULL DEFAULT NULL,
+	`uf` VARCHAR(2) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
+	`city` VARCHAR(8) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
+	`st_type` VARCHAR(11) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
+	`st_no` VARCHAR(52) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
+	`cmty_l` VARCHAR(24) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
+	`cmty_r` VARCHAR(24) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
+	`class` VARCHAR(10) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
+	`pavement` VARCHAR(24) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
+	`shape_leng` DOUBLE(24,15) NULL DEFAULT NULL,
+	`observ` VARCHAR(91) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
+	`no_pop` VARCHAR(83) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
+	`no_ant` VARCHAR(102) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
+	`cod_arq` VARCHAR(4) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
+	`legislacao` VARCHAR(97) NULL DEFAULT NULL COLLATE 'utf8mb4_general_ci',
+	`shapestlen` DOUBLE(24,15) NULL DEFAULT NULL,
+	UNIQUE INDEX `OGR_FID` (`OGR_FID`) USING BTREE,
+	INDEX `SHAPE` (`SHAPE`(32))
+)
+COLLATE='utf8mb4_general_ci'
+ENGINE=MyISAM
+AUTO_INCREMENT=2937
+;
