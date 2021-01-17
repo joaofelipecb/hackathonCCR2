@@ -1,8 +1,10 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="command/map.js"></script>
 <script src="control/ajax.js"></script>
 <script src="control/map.js"></script>
+<script src="struct/map.js"></script>
 <script>
 control_ajax_request('wsgi.py?route=renderMap',console.log);
 </script>
@@ -29,9 +31,13 @@ control_ajax_request('wsgi.py?route=renderMap',console.log);
 	<div class="tag">Mercearia</div>
 	<div class="tag">Eletricista</div>
 </article>
-<div class="mapFrame">
+<div class="mapFrame" id="mapFrame">
 <img src="data/mapa.jpg">
 </div>
+<script>
+var mapFrame = document.getElementById('mapFrame');
+control_Map_initialize(mapFrame,-1000,-1000,1);
+</script>
 <article class="marginHorizontal25">
 <input type="button" class="marginTop10" value="Buscar cursos profissionalizantes">
 </article>
