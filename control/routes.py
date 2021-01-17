@@ -19,5 +19,5 @@ def get_response(route):
         for part in parts:
             cursor = cursor.__getattribute__(part)
         function = cursor.__getattribute__(functionName)
-        function()        
+        return function()        
     return "<html>not implemented</html>"

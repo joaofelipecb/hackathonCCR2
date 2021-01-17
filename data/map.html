@@ -3,55 +3,57 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="command/loading.js"></script>
 <script src="command/map.js"></script>
+<script src="command/dataDriver.js"></script>
 <script src="control/ajax.js"></script>
 <script src="control/loading.js"></script>
 <script src="control/map.js"></script>
+<script src="control/dataDriver.js"></script>
 <script src="struct/loading.js"></script>
 <script src="struct/map.js"></script>
+<script src="struct/dataDriver.js"></script>
 <link rel="stylesheet" href="data/style.css">
 <title>Ei Vizinho</title>
 </head>
 <body>
+<img src="data/loading.gif" class="loadingAnimation" id="loadingAnimation">
 <header>
 	<img src="data/logo.png" class="logo">
 	<img src="data/hamburguerMenu.png" class="menu">
 </header>
 <article class="marginHorizontal25">
-<div style="display:none" id="businessSugestion">
+<div style="display:none;" id="businessSuggestion">
 	<p>Esses foram os top 10 neg&oacute;cios mais consumidos nesta regi&atilde;o.
 	Escolha alguma op&ccedil;&atilde;o para vizualizar o consumo de cada neg&oacute;cio
 	separadamente.</p>
-	<div id="businessSugestionData">
-	<div class="tag tagSelected">Hamburguers</div>
-	<div class="tag">Encanamento</div>
-	<div class="tag">Dry Wall</div>
-	<div class="tag">Corte de Cabelo</div>
-	<div class="tag">Xis</div>
-	<div class="tag">Marmita</div>
-	<div class="tag">Costura</div>
-	<div class="tag">Manicure</div>
-	<div class="tag">Mercearia</div>
-	<div class="tag">Eletricista</div>
+	<div id="businessSuggestionData">
+
 	</div>
 </div>
 </article>
-<div class="mapFrame" style="display:none;">
-<img src="data/mapa.jpg" id="mapFrame">
+<div class="mapFrame" style="display:none;" id="mapFrame">
+<img src="data/mapa.jpg" id="mapImage">
 </div>
 <script>
-var mapFrame = document.getElementById('mapFrame');
-control_Map_initialize(mapFrame,1920,1440,-1583,-1556,3);
+var mapImage = document.getElementById('mapImage');
+control_Map_initialize(mapImage,1920,1440,-1583,-1556,3);
 </script>
-<article class="marginHorizontal25" style="display:none;">
+<article class="marginHorizontal25" style="display:none;" id="callToAction">
 <input type="button" class="marginTop10" value="Buscar cursos profissionalizantes">
 </article>
-<img src="data/loading.gif" class="loadingAnimation" id="loadingAnimation">
 <script>
 var loadingAnimation = document.getElementById('loadingAnimation');
-var bussinesSugestion = document.getElementById('businessSugestion');
-var businessSugestionData = document.getElementById('businessSugestionData');
-var loading = control_Loading_initialize(loadingAnimation, businessSugestion, businessSugestionData);
-control_ajax_request('wsgi.py?route=renderMap',control_Loading_finish.bind(null,loading));
+var mapFrame = document.getElementById('mapFrame');
+var mapImage = document.getElementById('mapImage');
+var businessSuggestion = document.getElementById('businessSuggestion');
+var callToAction = document.getElementById('callToAction');
+var loading3 = control_Loading_initialize('wsgi.py?route=renderMap', [mapFrame, businessSuggestion, callToAction], mapImage, loadingAnimation);
+
+var businessSuggestionData = document.getElementById('businessSuggestionData');
+var businessSuggestionDataDriver = control_DataDriver_initialize(businessSuggestionData, '<div class="tag">$0</tag>');
+var loading2 = control_Loading_initialize('wsgi.py?route=suggestBusiness', null, businessSuggestionDataDriver, loading3);
+
+var loading1 = control_Loading_initialize('wsgi.py?route=processMap', null, null, loading2);
+control_Loading_start(loading1);
 </script>
 </body>
 <html>

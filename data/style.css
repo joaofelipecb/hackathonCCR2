@@ -238,5 +238,6 @@ body div.mapFrame{
 body .loadingAnimation{
 	width:100%;
 	object-fit:cover;
-	margin-top:150px;
+	margin-top:260px;
+	position:absolute;
 }
