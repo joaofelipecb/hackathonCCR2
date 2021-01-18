@@ -185,6 +185,7 @@ body article.articlePreview{
 	margin:25px;
 	padding:0px;
 	display:table;
+	width:310px;
 }
 
 body article .articlePreviewRow{
@@ -199,6 +200,7 @@ body article img.articlePreviewPhoto{
 }
 
 body article .articlePreviewParagraph{
+	width:210px;
 	display:table-cell;
 	vertical-align:top;
 	padding:10px;
